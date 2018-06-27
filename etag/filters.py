@@ -50,14 +50,14 @@ class TagReadsFilter(django_filters.FilterSet):
     reader_id = django_filters.CharFilter(lookup_type='icontains')
     tag_id = django_filters.CharFilter(lookup_type='icontains')
     tag_reads_id = django_filters.NumberFilter()
-    user = django_filters.NumberFilter()
+    #user = django_filters.NumberFilter()
     min_read_time = django_filters.DateTimeFilter(name='tag_read_time',lookup_type='gte')
     max_read_time = django_filters.DateTimeFilter(name='tag_read_time',lookup_type='lte')
     public = django_filters.BooleanFilter(lookup_type='exact')
 
     class Meta:
         model = TagReads
-        fields = ['reader_id','tag_id','tag_reads_id','user','tag_read_time','public']
+        fields = ['reader_id','tag_id','tag_reads_id','tag_read_time','public']
 
 
 class UploadLocationFilter(django_filters.FilterSet):
@@ -84,7 +84,7 @@ class ReaderLocationFilter(django_filters.FilterSet):
 
 class TagOwnerFilter(django_filters.FilterSet):
     user = django_filters.NumberFilter()
-    tag_id = django_filters.CharFilter(lookup_type='icontains')
+    tag_id = django_filters.CharFilter(lookup_type='iexact')
     min_start_time = django_filters.DateTimeFilter(name='start_time',lookup_type='gte')
     max_start_time = django_filters.DateTimeFilter(name='start_time',lookup_type='lte')
     min_end_time = django_filters.DateTimeFilter(name='end_time',lookup_type='gte')
