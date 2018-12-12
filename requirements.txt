@@ -19,8 +19,8 @@ ecdsa==0.11
 kombu==3.0.30
 mock==1.0.1
 ordereddict==1.1
-paramiko==1.14.0
-pycrypto==2.6.1
+paramiko
+pycrypto
 pymongo==3.2.1
 python-dateutil==1.5
 python-memcached==1.48
