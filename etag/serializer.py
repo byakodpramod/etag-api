@@ -7,7 +7,7 @@ class WritableJSONField(serializers.WritableField):
     def to_native(self, obj):
         return obj #json.dumps(obj)
     def from_native(self,value):
-	return value #json.loads(value)
+        return value #json.loads(value)
 
 class JSONSerializerField(serializers.Field):
     """ Serializer for JSONField -- required to make field writable"""
